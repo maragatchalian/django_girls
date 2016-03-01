@@ -5,7 +5,7 @@ from django.utils import timezone
 
 #Model
 class Post(models.Model):
-    author = models.ForeignKey('auth.User') #properties
+    author = models.ForeignKey('auth.User')  #properties
     title = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(
@@ -13,9 +13,9 @@ class Post(models.Model):
     published_date = models.DateTimeField(
         blank=True, null=True)
 
-    def publish(self): #methods
+    def publish(self):  #methods
         self.published_date = timezone.now()
         save.save()
 
     def __str__(self):
-        return self.title()
+        return self.title
