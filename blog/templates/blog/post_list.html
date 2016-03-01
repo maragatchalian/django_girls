@@ -1,1 +1,18 @@
-Hello! This is a sample template
+<html>
+    <title> Mara's Blog </title>
+    <body>
+
+    <div> 
+        <h1><a href="/"> Mara's Blog </a></h1>
+    </div>
+
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="/">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaks }}</p>
+         </div>
+    {% endfor %}
+
+    </body>
+</html>
